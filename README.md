@@ -20,7 +20,7 @@
 
 ### 🦀 About me
 
-- 🔧 I build **FlowBench** — a Windows desktop app for authorized network stress-testing & performance monitoring (Python · PySide6 · Fluent Design), with live charts and a built-in plugin marketplace.
+- 🔧 I build [**FlowBench**](https://github.com/Flowbench-Org/FlowBench) — a Windows desktop app for authorized network stress-testing & performance monitoring (Python · PySide6 · Fluent Design), with live charts and a built-in plugin marketplace.
 - 🐍 Small **Python** tools for whatever itch: [Bili Watch](https://github.com/Carlown/bili-watch) keeps an eye on Bilibili uploads, [Phantom-Next](https://github.com/Carlown/phantom-next) is a different take on CAPTCHA.
 - ⛏️ **Game mods**: [MobMind](https://github.com/Carlown/MobMind) gives Minecraft mobs an AI mind — villagers guard their pets, haggle, and yell for help when they catch fire.
 - 🖥️ I keep a crayon crab named [Clawd](https://github.com/Carlown/clawd-pet) on my Windows desktop — he strolls around, and now he lives on this page too.
@@ -40,7 +40,7 @@
 
 <!-- projects:start -->
 <p align="center">
-<a href="https://github.com/Carlown/FlowBench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-FlowBench-dark.svg"><img alt="FlowBench" src="assets/project-FlowBench-light.svg" width="49%"></picture></a>
+<a href="https://github.com/Flowbench-Org/FlowBench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-FlowBench-dark.svg"><img alt="FlowBench" src="assets/project-FlowBench-light.svg" width="49%"></picture></a>
 <a href="https://github.com/Carlown/clawd-pet"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-clawd-pet-dark.svg"><img alt="ClawdPet" src="assets/project-clawd-pet-light.svg" width="49%"></picture></a>
 <br>
 <a href="https://github.com/Carlown/bili-watch"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-bili-watch-dark.svg"><img alt="Bili Watch" src="assets/project-bili-watch-light.svg" width="49%"></picture></a>

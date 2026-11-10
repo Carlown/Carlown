@@ -62,19 +62,30 @@ def calendar_from_graphql(user, token):
     return {'total': cal['totalContributions'], 'days': sorted(days, key=lambda d: d['date'])}
 
 
-def fetch(user, token=None):
+def _repo_row(r):
+    return {
+        'stars': r['stargazers_count'], 'forks': r['forks_count'], 'language': r['language'],
+        'description': r.get('description') or '', 'homepage': r.get('homepage') or '',
+        'fork': r.get('fork', False), 'archived': r.get('archived', False),
+    }
+
+
+def fetch(user, token=None, extra=()):
     u = _get(f'https://api.github.com/users/{user}', token)
     repos = _get(f'https://api.github.com/users/{user}/repos?per_page=100&type=owner&sort=pushed', token)
     out_repos, langs = {}, {}
     for r in repos:
-        out_repos[r['name']] = {
-            'stars': r['stargazers_count'], 'forks': r['forks_count'], 'language': r['language'],
-            'description': r['description'] or '', 'homepage': r['homepage'] or '', 'fork': r['fork'],
-            'archived': r['archived'],
-        }
+        out_repos[r['name']] = _repo_row(r)
         if not r['fork'] and not r['archived']:
             for k, v in _get(r['languages_url'], token).items():
                 langs[k] = langs.get(k, 0) + v
+    # repos hosted elsewhere (e.g. moved to an org) that still belong on a project card;
+    # fetched live for their star/fork/language, but kept out of the personal language donut.
+    for full in extra:
+        try:
+            out_repos[full] = _repo_row(_get(f'https://api.github.com/repos/{full}', token))
+        except Exception as e:  # noqa: BLE001
+            print('extra repo fetch failed:', full, e)
     cal = None
     try:
         cal = calendar_from_html(user)
@@ -92,11 +103,11 @@ def fetch(user, token=None):
     }
 
 
-def load(user, offline=False):
+def load(user, offline=False, extra=()):
     token = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
     if not offline:
         try:
-            data = fetch(user, token)
+            data = fetch(user, token, extra)
             os.makedirs(os.path.dirname(CACHE), exist_ok=True)
             with open(CACHE, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)

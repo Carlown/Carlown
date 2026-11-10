@@ -849,7 +849,7 @@ def project_card(pal, cfg, proj, repo, idx):
         ts -= 1
     t, _, _ = d.text(title, tx, 58, ts, 'mixb', p['text'])
     d.add(t)
-    t, _, _ = d.text(f"{cfg['user']}/{proj['repo']}", tx, 79, 14, 'gb', p['text2'])
+    t, _, _ = d.text(proj.get('source') or f"{cfg['user']}/{proj['repo']}", tx, 79, 14, 'gb', p['text2'])
     d.add(t)
     for i, line in enumerate(wrap(proj['desc'], 16, 330, 'mix', 3)):
         t, _, _ = d.text(line, tx, 105 + i * 21, 16, 'mix', p['text'])
@@ -932,7 +932,8 @@ def readme_projects(cfg):
         cells = []
         for proj in projs[i:i + 2]:
             slug = proj['repo']
-            cells.append(f'<a href="https://github.com/{cfg["user"]}/{slug}"><picture>'
+            href = proj.get('source') or f'{cfg["user"]}/{slug}'
+            cells.append(f'<a href="https://github.com/{href}"><picture>'
                          f'<source media="(prefers-color-scheme: dark)" srcset="assets/project-{slug}-dark.svg">'
                          f'<img alt="{proj["title"]}" src="assets/project-{slug}-light.svg" width="49%"></picture></a>')
         rows.append('\n'.join(cells))
@@ -958,7 +959,8 @@ def main():
     only = [a for a in sys.argv[1:] if not a.startswith('--')]
     with open(os.path.join(ROOT, 'profile.json'), encoding='utf-8') as f:
         cfg = json.load(f)
-    data = ghdata.load(cfg['user'], offline)
+    extras = [p['source'] for p in cfg['projects'] if p.get('source')]
+    data = ghdata.load(cfg['user'], offline, extras)
     os.makedirs(ASSETS, exist_ok=True)
     sizes = {}
     for pal in PALETTES:
@@ -971,7 +973,7 @@ def main():
         if not only or 'projects' in only:
             for i, proj in enumerate(cfg['projects']):
                 sizes[f'project-{proj["repo"]}-{pal["name"]}'] = write(
-                    project_card(pal, cfg, proj, data['repos'].get(proj['repo']), i), f'project-{proj["repo"]}')
+                    project_card(pal, cfg, proj, data['repos'].get(proj.get('source') or proj['repo']), i), f'project-{proj["repo"]}')
         if not only or 'footer' in only:
             sizes[f'footer-{pal["name"]}'] = write(footer(pal, cfg), 'footer')
     readme = os.path.join(ROOT, 'README.md')

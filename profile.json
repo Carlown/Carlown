@@ -14,12 +14,13 @@
   "projects": [
     {
       "repo": "FlowBench",
+      "source": "Flowbench-Org/FlowBench",
       "title": "FlowBench",
       "desc": "Windows desktop app for authorized network stress-testing and performance monitoring, with a Fluent UI.",
       "icon": "gauge",
       "color": "blue",
       "language": "Python",
-      "link": "https://github.com/Carlown/FlowBench/releases/latest",
+      "link": "https://github.com/Flowbench-Org/FlowBench/releases/latest",
       "link_label": "Download"
     },
     {
