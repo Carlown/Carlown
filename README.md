@@ -50,7 +50,7 @@
 <a href="https://github.com/Carlown/nanhua-qiaoge-webgal"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-nanhua-qiaoge-webgal-dark.svg"><img alt="The Sad Life of Qiaoge" src="assets/project-nanhua-qiaoge-webgal-light.svg" width="49%"></picture></a>
 </p>
 
-<p align="center"><sub>Also: <a href="https://github.com/Carlown/deepseek-kisser">DeepSeek Kisser</a> · <a href="https://github.com/Carlown/fuck-huigezi">Huigezi RAT remover</a> · <a href="https://github.com/Carlown/huggingface-kisser">Hugging Face Kisser</a> · <a href="https://github.com/Carlown/majia7-dsh-skin">Majia7 DSH skin</a></sub></p>
+<p align="center"><sub>Also: <a href="https://github.com/Carlown/deepseek-kisser">DeepSeek Kisser</a> · <a href="https://github.com/Carlown/fuck-huigezi">Huigezi RAT remover</a> · <a href="https://github.com/Carlown/huggingface-kisser">Hugging Face Kisser</a> · <a href="https://github.com/Carlown/majia7-dsh-skin">Majia7 DSH skin</a> · <a href="https://github.com/Carlown/Clawd-Mono">Clawd Mono</a></sub></p>
 <!-- projects:end -->
 
 ### 📊 Adventurer Card
