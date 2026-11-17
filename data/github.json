@@ -1868,7 +1868,7 @@
    "forks": 0,
    "homepage": "https://clawd-mono.cc.cd",
    "language": "Python",
-   "stars": 1
+   "stars": 4
   },
   "DNSHE-Auto-COMPAT": {
    "archived": false,
@@ -1991,7 +1991,7 @@
  "user": {
   "bio": "Tinkering with Python and game mods for fun, building random side projects.",
   "created_at": "2023-05-15T09:49:12Z",
-  "followers": 0,
+  "followers": 1,
   "login": "Carlown",
   "name": "Anthinr",
   "public_repos": 14
