@@ -1830,6 +1830,11 @@
     "count": 30,
     "date": "2026-11-16",
     "level": 3
+   },
+   {
+    "count": 0,
+    "date": "2026-11-17",
+    "level": 0
    }
   ],
   "total": 517
@@ -1838,11 +1843,11 @@
   "Batchfile": 135,
   "CSS": 66932,
   "Dockerfile": 4166,
-  "HTML": 116095,
+  "HTML": 116248,
   "Java": 756876,
   "JavaScript": 294989,
   "PowerShell": 355,
-  "Python": 628337,
+  "Python": 630904,
   "SCSS": 7012,
   "TypeScript": 225841
  },
@@ -1861,7 +1866,7 @@
    "description": "",
    "fork": false,
    "forks": 0,
-   "homepage": "",
+   "homepage": "https://clawd-mono.cc.cd",
    "language": "Python",
    "stars": 1
   },
